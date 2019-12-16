@@ -1,0 +1,241 @@
+/*
+Theme Name: practice-theme5.84
+Theme URI:
+Author: Ledwing Hernandez
+Author URI: https://github.com/Waka867
+Description: Test theme starting at Udemy WP course section 5, number 84
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentyseventeen
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+$master-color: #1c2229;
+
+/*------------------------------------------------------------------------------------------------------*/
+
+@mixin text-c {
+  text-align: center;
+}
+
+@mixin br5px {
+  border-radius: 5px;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+
+@fontface {
+  font-family: 'Montserrat-Regular', sans-serif;
+  src: url('assets/fonts/Montserrat-Regular.ttf') format( 'truetype' );
+  font-weight: normal;
+  font-style: normal;
+}
+
+@fontface {
+  font-family:' Montserrat-Italic', sans-serif;
+  src: url('assets/fonts/Montserrat-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@fontface {
+  font-family: 'Montserrat-Bold', sans-serif;
+  src: url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@fontface {
+  font-family: 'Montserrat-Bold-Italic', sans-serif;
+  src: url('assets/fonts/Montserrat-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+/*------------------------------------------------------------------------------------------------------*/
+
+
+body {
+  margin: 0;
+  background-color: $master-color;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+.author-profile {
+  @include text-c;
+  margin: auto;
+}
+
+.comment {
+    list-style: none;
+    padding: 2%;
+    border-top: 1px solid black;
+}
+
+.comment-form-comment textarea {
+  width: 100%;
+  @include br5px;
+}
+
+.comment-body {
+      padding: 1%;
+}
+
+.comment img {
+  height: 5vw;
+  width: auto;
+}
+
+.comments-area {
+  background-color: lightgrey;
+  padding: 3%;
+  border: 10px solid #37483f;
+}
+
+.comments-closed {
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+.comment-info {
+  opacity: .7;
+  font-style: italic;
+}
+
+.comment-reply-link {
+  text-decoration: none;
+  color: #3c093c;
+
+  &:hover {
+    color: #632c63;
+    // cursor: pointer;
+  }
+}
+
+.custom-menu-style ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.custom-menu-style li {
+  float: left;
+}
+
+.custom-menu-style li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.custom-menu-style li a:hover {
+  background-color: #111;
+}
+
+.custom-menu-style .active {
+  background-color: red;
+}
+
+.form-submit .submit {
+  border-radius: 5px;
+  background-color: #3c093c;
+  border: 1px solid black;
+  color: white;
+
+  &:hover {
+    background-color: #632c63;
+    cursor: pointer;
+  }
+}
+
+.practice-footer-style {
+	padding: 1%;
+	background-color: #333;
+	color: grey;
+}
+
+.practice-footer-style li a {
+	color: grey;
+}
+
+// .reply-to-comment-btn {
+//     color: #3c093c;
+//
+//     &:hover {
+//       color: #632c63;
+//       cursor: pointer;
+//     }
+// }
+
+.site-content {
+	padding: 0 2% !important;
+	margin: 0 5% 0 5%;
+	background-color: white;
+	min-height: 100vh;
+}
+
+.wp-post-image {
+//.site-content > #primary {
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-block-quote {
+  font-style: italic;
+  padding: 2px 15px 5px 10px;
+  border-left: 10px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  cite {
+    font-weight: bold;
+  }
+}
+
+
+/*------------------------------------------------------------------------------------------------------*/
+
+#comment-submission-form {
+  margin-top: 10%;
+}
+
+#comments {
+  // .even {
+  //   background-color: #afafaf;
+  // }
+}
+
+#custom-site-banner {
+	height: 120px;
+	width: 100%;
+	margin: -20px 0 0 0;
+	background-color: white;
+	font-size: 2.5em;
+}
+
+#custom-site-banner-title {
+	text-align: center;
+  font-family: 'Montserrat-Regular';
+  font-size: 7vw;
+  margin: 20px 0;
+}
+
+#primary {
+	width: 70%;
+	float: left;
+}
+
+#secondary {
+	width: 30%;
+	float: right;
+}
