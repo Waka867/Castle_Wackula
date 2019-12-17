@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 
-get_header(); 
+get_header();
 
 //This is where we utilize a template part to display the site title banner
 echo get_template_part('template-parts/site-banner');
@@ -14,17 +14,17 @@ echo get_template_part('template-parts/site-banner');
 
 	if( have_posts() ){
 ?>
-		
+
 		<!-- Display page title -->
-		<a href="<?php the_permalink()?>" title="<?php the_title_attribute() ?>">
-			<h1><strong> <?php the_title() ?></strong></h1>
-		</a>
+		<!-- <a href="<?php //the_permalink()?>" title="<?php //the_title_attribute() ?>"> -->
+			<!-- <h1><strong> <?php //the_title() ?></strong></h1> -->
+		<!-- </a> -->
 
 <?php
 
 		if( !is_active_sidebar( 'main-sidebar' ) ){
-			
-			
+
+
 			echo '<div class="row">';
 			echo '<div class="col-md-12">';
 			echo '<article id="primary post-' . get_the_ID() . '"';
@@ -32,8 +32,8 @@ echo get_template_part('template-parts/site-banner');
 
 			while( have_posts() ) {
 				the_post();
-				
-				
+
+
 				// Adds feature image/post thumbnail if present
 				if( has_post_thumbnail() ){
 					//the_post_thumbnail( 'full', ['title' => get_the_title()] );
@@ -45,13 +45,13 @@ echo get_template_part('template-parts/site-banner');
 			       	echo the_content();
 				echo "</section>";
 				// Replace some of this code with a page template
-				
+
 				//Edit link
 				echo edit_post_link();
 			}
 
-			
-			
+
+
 			echo '</article></div></div>';
 
 		} else {
@@ -63,7 +63,7 @@ echo get_template_part('template-parts/site-banner');
 			while( have_posts() ) {
 				the_post();
 
-				
+
 				// Adds feature image/post thumbnail if present
 				if( has_post_thumbnail() ){
 					//the_post_thumbnail( 'full', ['title' => get_the_title()] );
@@ -76,13 +76,14 @@ echo get_template_part('template-parts/site-banner');
 			       	echo the_content();
 				echo "</section>";
 				// Replace some of this code with a page template
-				
+
 				//Edit link
 				echo edit_post_link();
 			}
 
 		echo '</article></div>';
 		echo'<div class="col-md-2">';
+		get_sidebar();
 		echo "</div>";
 		echo '</div>';
 
@@ -101,7 +102,7 @@ echo get_template_part('template-parts/site-banner');
 	// get_sidebar();
 
 ?>
-	<br><br><p>front-page.php derp</p>
+	<br><br><p>front-page.php</p>
 
 </div>
 

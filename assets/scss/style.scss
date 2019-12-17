@@ -1,19 +1,15 @@
 /*
-Theme Name: practice-theme5.84
+Theme Name: Castle Wackula
 Theme URI:
+Description: Dark near-Victorian styled theme for those of us that enjoy bats, old leather couches and a red wine while listening to The Cure.
 Author: Ledwing Hernandez
+Text Domain: castlewackula
 Author URI: https://github.com/Waka867
-Description: Test theme starting at Udemy WP course section 5, number 84
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: twentyseventeen
-Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 $master-color: #1c2229;
+// $red: red;
+
 
 /*------------------------------------------------------------------------------------------------------*/
 
@@ -27,32 +23,30 @@ $master-color: #1c2229;
 
 /*------------------------------------------------------------------------------------------------------*/
 
-@fontface {
-  font-family: 'Montserrat-Regular', sans-serif;
-  src: url('assets/fonts/Montserrat-Regular.ttf') format( 'truetype' );
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('fonts/Montserrat-Regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
+//
+// @fontface {
+//   font-family: 'Montserrat-Italic', sans-serif;
+//   src: url('assets/fonts/Montserrat-Italic.ttf') format('truetype');
+//   font-weight: normal;
+//   font-style: italic;
+// }
 
-@fontface {
-  font-family:' Montserrat-Italic', sans-serif;
-  src: url('assets/fonts/Montserrat-Italic.ttf') format('truetype');
+@font-face {
+  font-family: 'Linden Hill';
+  src: url('fonts/linden-hill-master/webfonts/LindenHill-webfont.eot'),
+        url('fonts/linden-hill-master/webfonts/LindenHill-webfont.ttf'),
+        url('fonts/linden-hill-master/webfonts/LindenHill-webfont.woff'),
+        url('fonts/linden-hill-master/webfonts/LindenHill-webfont.svg');
   font-weight: normal;
-  font-style: italic;
 }
 
-@fontface {
-  font-family: 'Montserrat-Bold', sans-serif;
-  src: url('assets/fonts/Montserrat-Bold.ttf') format('truetype');
-  font-weight: bold;
-}
 
-@fontface {
-  font-family: 'Montserrat-Bold-Italic', sans-serif;
-  src: url('assets/fonts/Montserrat-BoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-}
 
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -61,6 +55,8 @@ $master-color: #1c2229;
 body {
   margin: 0;
   background-color: $master-color;
+  font-family: 'Linden Hill';
+  // font-family: 'Montserrat-Regular';
 }
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -221,11 +217,12 @@ body {
 	margin: -20px 0 0 0;
 	background-color: white;
 	font-size: 2.5em;
+  // font-family: 'Linden Hill';
 }
 
 #custom-site-banner-title {
 	text-align: center;
-  font-family: 'Montserrat-Regular';
+  // font-family: 'Montserrat-Regular';
   font-size: 7vw;
   margin: 20px 0;
 }

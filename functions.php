@@ -40,12 +40,19 @@ function theme_slug_setup() {
 add_action( 'after_setup_theme', 'theme_slug_setup' );
 // Adds thumbnail/featured image support. This is where you would add it for new custom post types
 add_theme_support( 'post-thumbnails', [ 'post', 'page' ] );
-
-
+// Adds theme post formats 
 function practice_theme_post_formats_setup() {
  add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 }
 add_action( 'after_setup_theme', 'practice_theme_post_formats_setup' );
+// Adds theme customize setting pages
+/*function theme_customize_register(){
+	//customize_register( 'Font
+}
+add_action( 'customize_register', 'theme_customize_register' ); 
+ */
+
+
 
 
 
