@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 
-get_header(); 
+get_header();
 
 //This is where we utilize a template part to display the site title banner
 echo get_template_part('template-parts/site-banner');
@@ -9,39 +9,86 @@ echo get_template_part('template-parts/site-banner');
 ?>
 
 
-
-<div class='site-content container'>
+<div class='container site-content'>
 <?php
 
 	if( have_posts() ){
+?>
 
-		echo '<article id="primary post-' . get_the_ID() . '"';
-		echo post_class() . '>';
+		<!-- Display page title -->
+		<!-- <a href="<?php //the_permalink()?>" title="<?php //the_title_attribute() ?>"> -->
+			<!-- <h1><strong> <?php //the_title() ?></strong></h1> -->
+		<!-- </a> -->
 
-		while( have_posts() ) {
-			the_post();
+<?php
 
-			// Adds feature image/post thumbnail if present
-			if( has_post_thumbnail() ){
-				the_post_thumbnail( 'full', ['title' => get_the_title()] );
-			}		
+		if( !is_active_sidebar( 'main-sidebar' ) ){
 
-			echo '<a href="';
-			the_permalink();
-			echo '">';
-			echo '<h2><strong>';
-			the_title();
-			echo '</strong></h2></a>';
 
-			the_content();
-			// Replace some of this code with a page template
-			
+			echo '<div class="row">';
+			echo '<div class="col-md-12">';
+			echo '<article id="primary post-' . get_the_ID() . '"';
+			echo post_class() . '>';
 
-			//Edit link
-			echo edit_post_link();
+			while( have_posts() ) {
+				the_post();
+
+
+				// Adds feature image/post thumbnail if present
+				if( has_post_thumbnail() ){
+					//the_post_thumbnail( 'full', ['title' => get_the_title()] );
+					the_post_thumbnail();
+				}
+
+
+				echo "<section>";
+			       	echo the_content();
+				echo "</section>";
+				// Replace some of this code with a page template
+
+				//Edit link
+				echo edit_post_link();
+			}
+
+
+
+			echo '</article></div></div>';
+
+		} else {
+			echo '<div class="row">';
+			echo '<div class="col-md-10">';
+			echo '<article id="primary post-' . get_the_ID() . '"';
+			echo post_class() . '>';
+
+			while( have_posts() ) {
+				the_post();
+
+
+				// Adds feature image/post thumbnail if present
+				if( has_post_thumbnail() ){
+					//the_post_thumbnail( 'full', ['title' => get_the_title()] );
+					the_post_thumbnail();
+				}
+
+
+
+				echo "<section>";
+			       	echo the_content();
+				echo "</section>";
+				// Replace some of this code with a page template
+
+				//Edit link
+				echo edit_post_link();
+			}
+
+		echo '</article></div>';
+		echo'<div class="col-md-2">';
+		get_sidebar();
+		echo "</div>";
+		echo '</div>';
+
+
 		}
-
-		echo '</article>';
 
 	} else {
 ?>
@@ -52,12 +99,13 @@ echo get_template_part('template-parts/site-banner');
 	}
 
 
-	get_sidebar();
+	// get_sidebar();
 
 ?>
-	<p>page.php</p>
+	<br><br><p>page.php</p>
 
 </div>
+
 
 
 <?php get_footer(); ?>

@@ -1,5 +1,12 @@
 <?php
 
+/*
+*
+*
+* Front-page.php is the primary file for the site front page
+*
+*
+*/
 
 get_header();
 
