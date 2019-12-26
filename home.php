@@ -13,6 +13,25 @@ get_header();
 //This is where we utilize a template part to display the site title banner
 echo get_template_part('template-parts/site-banner');
 
+
+function wackula_display_title() {
+	// Displays Post title with link to post
+	$post_link = get_permalink();
+	the_title( "<a style='text-decoration: none;' href='$post_link'><h1>", '</h1></a>' );
+}
+
+function wackula_display_edit_and_full_link(){
+	// echo "<section>";
+	echo "<div class='blog-post-links'>";
+	echo the_content( 'View Full Article' );
+
+	if ( current_user_can( 'edit_posts' ) ) {
+		echo edit_post_link( 'Edit Post', ' | ' );
+	}
+	// echo "</section>";
+	echo "</div>";
+}
+
 ?>
 
 
@@ -20,43 +39,31 @@ echo get_template_part('template-parts/site-banner');
 <?php
 
 	if( have_posts() ){
-?>
-
-		<!-- Display page title -->
-		<!-- <a href="<?php //the_permalink()?>" title="<?php //the_title_attribute() ?>"> -->
-			<!-- <h1><strong> <?php //the_title() ?></strong></h1> -->
-		<!-- </a> -->
-
-<?php
 
 		if( !is_active_sidebar( 'main-sidebar' ) ){
 
 
 			echo '<div class="row">';
 			echo '<div class="col-md-12">';
-			echo '<article id="primary post-' . get_the_ID() . '"';
+			echo '<article class="blog-page-styling" id="primary post-' . get_the_ID() . '"';
 			echo post_class() . '>';
 
 			while( have_posts() ) {
 				the_post();
 
 				// Displays Post title with link to post
-				$post_link = get_permalink();
-				the_title( "<a href='$post_link'><h1>", '</h1></a>' );
-
+				wackula_display_title();
 
 				// Adds feature image/post thumbnail if present
 				if( has_post_thumbnail() ){
+					// echo "<div class='blog-img'>";
 					the_post_thumbnail( 'medium');
+					// echo "</div>";
 				}
 
+				// Show edit this and view article links
+				wackula_display_edit_and_full_link();
 
-				echo "<section>";
-			       	echo the_content( 'View Full Article' );
-				echo "</section>";
-
-				//Edit link
-				echo edit_post_link();
 			}
 
 
@@ -72,18 +79,18 @@ echo get_template_part('template-parts/site-banner');
 			while( have_posts() ) {
 				the_post();
 
+				// Displays Post title with link to post
+				wackula_display_title();
 
 				// Adds feature image/post thumbnail if present
 				if( has_post_thumbnail() ){
+					// echo "<div class='blog-img'>";
 					the_post_thumbnail( 'medium');
+					// echo "</div>";
 				}
 
-
-
-				echo "<section>";
-			       	echo the_content( 'View Full Article' );
-				echo "</section>";
-				// Replace some of this code with a page template
+				// Show edit this and view article links
+				wackula_display_edit_and_full_link();
 
 				//Edit link
 				echo edit_post_link();

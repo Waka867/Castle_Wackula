@@ -10,13 +10,40 @@ Author URI: https://github.com/Waka867
 /*------------------------------------------------------------------------------------------------------*/
 @font-face { font-family: 'Montserrat-Regular'; src: url("fonts/Montserrat-Regular.ttf"); font-weight: normal; font-style: normal; }
 
+@fontface { font-family: 'Montserrat-Italic', sans-serif;
+  src: url("fonts/Montserrat-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
 @font-face { font-family: 'Linden Hill'; src: url("fonts/linden-hill-master/webfonts/LindenHill-webfont.eot"), url("fonts/linden-hill-master/webfonts/LindenHill-webfont.ttf"), url("fonts/linden-hill-master/webfonts/LindenHill-webfont.woff"), url("fonts/linden-hill-master/webfonts/LindenHill-webfont.svg"); font-weight: normal; }
 
 /*------------------------------------------------------------------------------------------------------*/
 body { margin: 0; background-color: #1c2229; font-family: 'Linden Hill'; }
 
+section img { width: 100%; }
+
+article img { width: 100%; }
+
 /*------------------------------------------------------------------------------------------------------*/
 .author-profile { text-align: center; margin: auto; }
+
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+.alignleft { float: left; }
+
+.alignright { float: right; }
+
+.blog-page-styling img { width: 50%; display: block; }
+
+.blog-page-styling section img { width: 30%; }
+
+.blog-page-styling h1 { color: #1c2229; }
+
+.blog-page-styling h1:hover { color: #632c63; }
+
+.blog-post-links a { text-decoration: none; color: #1c2229; font-size: .8em; }
+
+.blog-post-links a:hover { color: #632c63; text-decoration: underline; }
 
 .comment { list-style: none; padding: 2%; border-top: 1px solid black; }
 

@@ -8,7 +8,8 @@ Author URI: https://github.com/Waka867
 */
 
 $master-color: #1c2229;
-// $red: red;
+$wackula-purple: #3c093c;
+$wackula-lighter-purple: #632c63;
 
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -21,6 +22,7 @@ $master-color: #1c2229;
   border-radius: 5px;
 }
 
+
 /*------------------------------------------------------------------------------------------------------*/
 
 @font-face {
@@ -29,13 +31,13 @@ $master-color: #1c2229;
   font-weight: normal;
   font-style: normal;
 }
-//
-// @fontface {
-//   font-family: 'Montserrat-Italic', sans-serif;
-//   src: url('assets/fonts/Montserrat-Italic.ttf') format('truetype');
-//   font-weight: normal;
-//   font-style: italic;
-// }
+
+@fontface {
+  font-family: 'Montserrat-Italic', sans-serif;
+  src: url('fonts/Montserrat-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
 
 @font-face {
   font-family: 'Linden Hill';
@@ -59,10 +61,64 @@ body {
   // font-family: 'Montserrat-Regular';
 }
 
+section img {
+  width: 100%;
+}
+
+article img {
+  width: 100%;
+}
+
 /*------------------------------------------------------------------------------------------------------*/
 .author-profile {
   @include text-c;
   margin: auto;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.blog-page-styling {
+  img {
+    width: 50%;
+    display: block;
+  }
+
+  section img {
+    width: 30%;
+  }
+
+  h1 {
+    color: $master-color;
+  }
+
+  h1:hover {
+    color: $wackula-lighter-purple;
+  }
+}
+
+.blog-post-links {
+  a {
+    text-decoration: none;
+    color: $master-color;
+    font-size: .8em;
+  }
+
+  a:hover {
+    color: $wackula-lighter-purple;
+    text-decoration: underline;
+  }
 }
 
 .comment {
@@ -104,10 +160,12 @@ body {
 
 .comment-reply-link {
   text-decoration: none;
-  color: #3c093c;
+  // color: #3c093c;
+  color: $wackula-purple;
 
   &:hover {
-    color: #632c63;
+    // color: #632c63;
+    color: $wackula-lighter-purple;
     // cursor: pointer;
   }
 }
